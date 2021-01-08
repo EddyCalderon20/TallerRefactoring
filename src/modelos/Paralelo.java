@@ -3,11 +3,11 @@ package modelos;
 import java.util.ArrayList;
 
 public class Paralelo {
-    public int numero;
-    public Materia materia;
-    public Profesor profesor;
-    public ArrayList<Estudiante> estudiantes;
-    public Ayudante ayudante;
+    private int numero;
+    private Materia materia;
+    private Profesor profesor;
+    private ArrayList<Estudiante> estudiantes;
+    private Ayudante ayudante;
 
     public int getNumero() {
         return numero;
@@ -33,10 +33,18 @@ public class Paralelo {
         this.profesor = profesor;
     }
     
-    //Imprime el listado de estudiantes registrados
-    public void mostrarListado(){
-        //No es necesario implementar
+    public ArrayList<Estudiante> getArrayEstudiantes(){
+        return estudiantes;
     }
+    
+    public void addEstudiante(Estudiante est){
+        estudiantes.add(est);
+    }
+    
+    public void removeEstudiante(Estudiante est){
+        estudiantes.remove(est);
+    }
+    
     
     
 }
