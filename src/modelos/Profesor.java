@@ -11,6 +11,10 @@ public class Profesor {
     public String telefono;
     public InformacionAdicionalProfesor info;
     public ArrayList<Paralelo> paralelos;
+    public int añosdeTrabajo;
+    public String facultad;
+    public double BonoFijo;
+
 
     public Profesor(String codigo, String nombre, String apellido, String facultad, int edad, String direccion, String telefono) {
         this.codigo = codigo;
@@ -25,6 +29,9 @@ public class Profesor {
     public void anadirParalelos(Paralelo p){
         paralelos.add(p);
     }
-    
+        
+    public double calcularSueldo(){
+        return añosdeTrabajo*600 + BonoFijo;
+    }  
     
 }
