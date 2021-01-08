@@ -1,33 +1,30 @@
 package modelos;
 
 import java.util.ArrayList;
+import java.util.Collections;
+import java.util.List;
 
-public class Ayudante {
-    protected Estudiante est;
-    public ArrayList<Paralelo> paralelos;
-
-    Ayudante(Estudiante e){
-    	est = e;
+public class Ayudante extends Estudiante{
+    protected List<Paralelo> paralelos ;
+   
+    Ayudante(){
+    	super();
+        paralelos = new ArrayList<>();
+        Collections.addAll(paralelos);  
+        paralelos = Collections.unmodifiableList(paralelos);  
     }
-    public String getMatricula() {
-        return est.getMatricula();
+       
+    public List<Paralelo> getParalelos() {
+        return paralelos;
     }
-
-    public void setMatricula(String matricula) {
-        est.setMatricula(matricula);
+    
+    public void añadiParalelos(Paralelo paralelo){
+        //añade nuevos paralelos donde debe dar sus ayudantías.
     }
-
-    //Getters y setters se delegan en objeto estudiante para no duplicar código
-    public String getNombre() {
-        return est.getNombre();
+    
+    public void eliminarParalelos(Paralelo paralelo){
+        //elimina paralelos donde debe dar sus ayudantías.
     }
-
-    public String getApellido() {
-        return est.getApellido();
-    }
-
-    //Los paralelos se añaden/eliminan directamente del Arraylist de paralelos
-
 
     //Método para imprimir los paralelos que tiene asignados como ayudante
     public void MostrarParalelos(){
